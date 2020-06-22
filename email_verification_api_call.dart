@@ -8,7 +8,7 @@ Future<EmailVerification> fetchVerif(String email, String apiKey) async {
     final http.Response response =
       await http.get(
         url + '?email=' + email + '&api_key=' + apiKey
-      );
+);
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
@@ -29,6 +29,7 @@ Future<EmailVerification> fetchVerif(String email, String apiKey) async {
     print('Socket Exception. Check your network status. \n$e');
   }
   catch (e) {print('Unknown Exception: $e');}
+  
 }
 
 class EmailVerificationData {

@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
@@ -71,4 +72,16 @@ emailsToList(String response) {
   for (var k in dataJson){emails.add(Email.fromJson(k));}
 
   return emails;
+}
+
+/*
+ *
+ *TEST OF JSON PARSING
+ *
+ */
+void main() {
+  List<Email> emails = emailsToList(domainSearchJSON);
+  emails.forEach((element) {
+    print(element);
+  });
 }
